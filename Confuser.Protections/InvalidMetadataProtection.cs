@@ -124,21 +124,13 @@ namespace Confuser.Protections {
 					our brand new Heap
 					*/
 					//
-					writer.TheOptions.MetaDataOptions.OtherHeapsEnd.Add(new RawHeap("#GUID", new byte[1]));
-					writer.TheOptions.MetaDataOptions.OtherHeapsEnd.Add(new RawHeap("#GUID", new byte[2]));
-					writer.TheOptions.MetaDataOptions.OtherHeapsEnd.Add(new RawHeap("#GUID", new byte[3]));
-					writer.TheOptions.MetaDataOptions.OtherHeapsEnd.Add(new RawHeap("#GUID", new byte[4]));
-					writer.TheOptions.MetaDataOptions.OtherHeapsEnd.Add(new RawHeap("#GUID", new byte[5]));
 					writer.TheOptions.MetaDataOptions.OtherHeapsEnd.Add(new RawHeap("#GUID", Guid.NewGuid().ToByteArray()));		
 					//
 					writer.TheOptions.MetaDataOptions.OtherHeapsEnd.Add(new RawHeap("#Strings", new byte[1]));
 					writer.TheOptions.MetaDataOptions.OtherHeapsEnd.Add(new RawHeap("#Blob", new byte[1]));
 					writer.TheOptions.MetaDataOptions.OtherHeapsEnd.Add(new RawHeap("#Schema", new byte[1]));	
-					writer.TheOptions.MetaDataOptions.OtherHeapsEnd.Add(new RawHeap("#GUID", new byte[6]));
-					writer.TheOptions.MetaDataOptions.OtherHeapsEnd.Add(new RawHeap("#GUID", new byte[7]));
-					writer.TheOptions.MetaDataOptions.OtherHeapsEnd.Add(new RawHeap("#GUID", new byte[8]));
-					writer.TheOptions.MetaDataOptions.OtherHeapsEnd.Add(new RawHeap("#GUID", new byte[9]));
-					writer.TheOptions.MetaDataOptions.OtherHeapsEnd.Add(new RawHeap("#GUID", new byte[10]));
+					writer.TheOptions.MetaDataOptions.OtherHeapsEnd.Add(new RawHeap("#~", new byte[1]));
+					writer.TheOptions.MetaDataOptions.OtherHeapsEnd.Add(new RawHeap("#-", new byte[1]));					
 				}
 				else if (e.WriterEvent == ModuleWriterEvent.MDOnAllTablesSorted) {
 					writer.MetaData.TablesHeap.DeclSecurityTable.Add(new RawDeclSecurityRow(
