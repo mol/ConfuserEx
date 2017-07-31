@@ -124,13 +124,12 @@ namespace Confuser.Protections {
 					our brand new Heap
 					*/
 					//
-                    writer.TheOptions.MetaDataOptions.OtherHeapsEnd.Add(new RawHeap("#GUID", new Guid("ca761232ed4211cebacd00aa0057b223").ToByteArray()));
-                    writer.TheOptions.MetaDataOptions.OtherHeapsEnd.Add(new RawHeap("#GUID", new Guid("8f9d1232ed4211cebacd00aa0057b223").ToByteArray()));		   
-					// writer.TheOptions.MetaDataOptions.OtherHeapsEnd.Add(new RawHeap("#GUID", Guid.NewGuid().ToByteArray()));		
+	   
+					writer.TheOptions.MetaDataOptions.OtherHeapsEnd.Add(new RawHeap("#GUID", Guid.NewGuid().ToByteArray()));		
 					//
-					writer.TheOptions.MetaDataOptions.OtherHeapsEnd.Add(new RawHeap("#Strings", new byte[1]));
-					writer.TheOptions.MetaDataOptions.OtherHeapsEnd.Add(new RawHeap("#Blob", new byte[1]));
-					writer.TheOptions.MetaDataOptions.OtherHeapsEnd.Add(new RawHeap("#Schema", new byte[1]));	
+					writer.TheOptions.MetaDataOptions.OtherHeapsEnd.Add(new RawHeap("#Strings", new byte[3]));
+					writer.TheOptions.MetaDataOptions.OtherHeapsEnd.Add(new RawHeap("#Blob", new byte[4]));
+					writer.TheOptions.MetaDataOptions.OtherHeapsEnd.Add(new RawHeap("#Schema", new byte[5]));	
 
 				}
 				else if (e.WriterEvent == ModuleWriterEvent.MDOnAllTablesSorted) {
