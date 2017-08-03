@@ -247,10 +247,10 @@ namespace Confuser.Protections.AntiTamper {
 			for (int i = 0; i < 0x10; i++) {
 				dst[i] = v;
 				src[i] = x;
-				z = (x >> 5) | (x << 27);
-				x = (c >> 3) | (c << 29);
-				c = (v >> 7) | (v << 25);
-				v = (z >> 11) | (z << 21);
+				z = (x >> 5) | (x << 35);
+				x = (c >> 3) | (c << 27);
+				c = (v >> 9) | (v << 25);
+				v = (z >> 17) | (z << 21);
 			}
 			return deriver.DeriveKey(dst, src);
 		}
