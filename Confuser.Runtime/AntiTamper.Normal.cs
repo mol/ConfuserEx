@@ -60,7 +60,7 @@ namespace Confuser.Runtime {
 			uint h = 0;
 			for (uint i = 0; i < l; i++) {
 				*e ^= y[h & 0xf];
-				y[h & 0xf] = (y[h & 0xf] ^ (*e++)) + 0x3a7c58f1;
+				y[h & 0xf] = (y[h & 0xf] ^ (*e++)) + 0x4d06c82a;
 				h++;
 			}
 		}
