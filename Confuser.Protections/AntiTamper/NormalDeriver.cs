@@ -16,13 +16,13 @@ namespace Confuser.Protections.AntiTamper {
 			for (int i = 0; i < 0x10; i++) {
 				switch (i % 3) {
 					case 0:
-						ret[i] = a[i] ^ b[i];
+						ret[i] = a[i] + b[i];
 						break;
 					case 1:
-						ret[i] = a[i] * b[i];
+						ret[i] = a[i] ^ b[i];
 						break;
 					case 2:
-						ret[i] = a[i] + b[i];
+						ret[i] = a[i] * b[i];
 						break;
 				}
 			}
@@ -41,13 +41,13 @@ namespace Confuser.Protections.AntiTamper {
 				yield return Instruction.Create(OpCodes.Ldelem_U4);
 				switch (i % 3) {
 					case 0:
-						yield return Instruction.Create(OpCodes.Xor);
+						yield return Instruction.Create(OpCodes.Add);
 						break;
 					case 1:
-						yield return Instruction.Create(OpCodes.Mul);
+						yield return Instruction.Create(OpCodes.Xor);
 						break;
 					case 2:
-						yield return Instruction.Create(OpCodes.Add);
+						yield return Instruction.Create(OpCodes.Mul);
 						break;
 				}
 				yield return Instruction.Create(OpCodes.Stelem_I4);
