@@ -89,8 +89,8 @@ namespace Confuser.Protections.AntiTamper {
 			}
 
 			MethodDef cctor = context.CurrentModule.GlobalType.FindStaticConstructor();
-			cctor.Body.Instructions.Insert(0, Instruction.Create(OpCodes.Call, initMethod));
-
+			cctor.Body.Instructions.Insert(0, Instruction.Create(OpCodes.Nop));
+			cctor.Body.Instructions.Insert(1, Instruction.Create(OpCodes.Call, initMethod));
 			parent.ExcludeMethod(context, cctor);
 		}
 
