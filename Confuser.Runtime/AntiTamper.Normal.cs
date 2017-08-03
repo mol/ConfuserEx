@@ -44,10 +44,10 @@ namespace Confuser.Runtime {
 			for (int i = 0; i < 0x10; i++) {
 				y[i] = v;
 				d[i] = x;
-				z = (x >> 5) | (x << 35);
-				x = (c >> 3) | (c << 27);
-				c = (v >> 9) | (v << 25);
-				v = (z >> 17) | (z << 21);
+				z = (x >> 15) | (x << 31);
+				x = (c >> 3) | (c << 14);
+				c = (v >> 5) | (v << 23);
+				v = (z >> 19) | (z << 26);
 			}
 			Mutation.Crypt(y, d);
 
